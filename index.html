@@ -1,8 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>NaturalFlow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="NaturalFlow">
+  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, audio, AI">
+  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
+  <meta property="og:title" content="PAPER_TITLE">
+  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
+  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="KEYWORD1">
+  <meta property="article:tag" content="KEYWORD2">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+  <meta name="twitter:title" content="PAPER_TITLE">
+  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="PAPER_TITLE">
+  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
+  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_conference_title" content="CONFERENCE_NAME">
+  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <!-- Original CSS -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Original async CSS -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Original JS -->
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- Hibiki-like dependencies -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -10,114 +98,339 @@
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-  >
-
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://unpkg.com/wavesurfer.js@7"></script>
 
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "PAPER_TITLE",
+    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "FIRST_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "SECOND_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      }
+    ],
+    "datePublished": "2024-01-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CONFERENCE_OR_JOURNAL_NAME"
+    },
+    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
+    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "audio"],
+    "abstract": "FULL_ABSTRACT_TEXT_HERE",
+    "citation": "BIBTEX_CITATION_HERE",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+    }
+  }
+  </script>
+
   <style>
-    td {
+    /* Hibiki-style audio cards */
+    .hibiki-audio-section {
+      padding-top: 1.5rem;
+      padding-bottom: 2rem;
+    }
+
+    .hibiki-card {
+      background: #fff;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+      padding: 2.5rem 3rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hibiki-card h2,
+    .hibiki-card h3,
+    .hibiki-card p,
+    .hibiki-card th,
+    .hibiki-card td {
+      color: #595959;
+    }
+
+    .hibiki-card table {
+      width: 100%;
+    }
+
+    .hibiki-card td,
+    .hibiki-card th {
       vertical-align: middle;
       text-align: center;
     }
 
-    h1, h2, h3, h4, h5, h6, body, b, strong, th, p {
-      color: #595959;
-    }
-
-    .btn-secondary {
-      padding: 0.1rem 0.8rem;
-      font-size: small;
-    }
-
-    .container-wide {
-      max-width: 1620px;
-    }
-
-    .section-card {
-      background: white;
-      border-radius: 0.5rem;
-      box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-      padding: 3rem;
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-    }
-
-    .wave-wrap {
-      min-height: 76px;
-    }
-
-    .table > :not(caption) > * > * {
+    .hibiki-card .table > :not(caption) > * > * {
       padding-top: 0.9rem;
       padding-bottom: 0.9rem;
     }
 
-    .audio-btn {
-      margin-top: 0.35rem;
+    .hibiki-card .wave-wrap {
+      min-height: 76px;
+    }
+
+    .hibiki-card .btn-secondary {
+      padding: 0.1rem 0.8rem;
+      font-size: small;
+    }
+
+    @media screen and (max-width: 768px) {
+      .hibiki-card {
+        padding: 1.25rem;
+        overflow-x: auto;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="container container-wide pt-5 mt-4">
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
-    <!-- 상단 / abstract -->
-    <div class="section-card">
-      <div class="text-center">
-        <h1>Academic Project Page</h1>
-        <p class="lead mb-4">
-          Institution / Lab — 
-          <a href="#" target="_blank" rel="noopener noreferrer">Project Link</a>
-        </p>
+  <!-- More Works Dropdown -->
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+      <i class="fas fa-flask"></i>
+      More Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>More Works from Our Lab</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
-
-      <p>
-        <b>Abstract.</b>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus.
-        Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate
-        nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante,
-        nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum
-        bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-      </p>
-    </div>
-
-    <!-- 여기부터 Hibiki 스타일 그대로 -->
-    <div class="section-card">
-      <h2>Examples with Ground Truth Interpretation</h2>
-      <p>
-        These samples come from the VoxPopuli dataset where the ground truth is real human interpretation.
-        The volume for the sources has been reduced so that it's easier to hear the translations.
-      </p>
-
-      <table class="table" id="vis-table2"></table>
-    </div>
-
-    <div class="section-card">
-      <h2>Multistream Visualization</h2>
-      <p>
-        The audio for the source and translated versions are on different channels.
-        Use headphones to hear both at the same time.
-      </p>
-
-      <table class="table" id="vis-table"></table>
+      <div class="works-list">
+        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Paper Title 1</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Paper Title 2</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Paper Title 3</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
     </div>
   </div>
 
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">Academic Project Page</h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                </span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Institution Name<br>Conference name and year</span>
+                <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus.
+                Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate
+                nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante,
+                nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum
+                bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End paper abstract -->
+
+
+    <!-- Hibiki-style audio box 1 -->
+    <section class="section hibiki-audio-section">
+      <div class="container is-max-desktop">
+        <div class="hibiki-card">
+          <h2 class="title is-3">Examples with Ground Truth Interpretation</h2>
+          <p>
+            These samples come from the VoxPopuli dataset where the ground truth is real human interpretation.
+            The volume for the sources has been reduced so that it's easier to hear the translations.
+          </p>
+
+          <table class="table" id="vis-table2"></table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hibiki-style audio box 2 -->
+    <section class="section hibiki-audio-section">
+      <div class="container is-max-desktop">
+        <div class="hibiki-card">
+          <h2 class="title is-3">Multistream Visualization</h2>
+          <p>
+            The audio for the source and translated versions are on different channels.
+            Use headphones to hear both at the same time.
+          </p>
+
+          <table class="table" id="vis-table"></table>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- BibTex citation -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@article{YourPaperKey2024,
+  title={Your Paper Title Here},
+  author={First Author and Second Author and Third Author},
+  journal={Conference/Journal Name},
+  year={2024},
+  url={https://your-domain.com/your-project-page}
+}</code></pre>
+      </div>
+    </section>
+    <!-- End BibTex citation -->
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>
+              which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br>
+              This website is licensed under a
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                Creative Commons Attribution-ShareAlike 4.0 International License
+              </a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    // Hibiki 페이지처럼 여러 플레이어가 동시에 재생되지 않게 처리
     const allWaveSurfers = [];
 
     function pauseOthers(current) {
       allWaveSurfers.forEach(ws => {
-        if (ws !== current) {
-          ws.pause();
-        }
+        if (ws !== current) ws.pause();
       });
     }
 
-    // 1) 스크린샷 상단 같은 일반 waveform 테이블
     function buildGroundTruthTable() {
       const columns = ['Real Human Interpretation', 'Hibiki', 'Seamless'];
       const dirs = [
@@ -134,11 +447,14 @@
       ];
 
       const table = $('#vis-table2');
+      table.empty();
 
       const thead = $('<thead>');
       const headerRow = $('<tr>');
       columns.forEach(header => {
-        headerRow.append($('<th style="text-align: center; border-bottom: 2px solid #333;">').text(header));
+        headerRow.append(
+          $('<th style="text-align: center; border-bottom: 2px solid #333;">').text(header)
+        );
       });
       thead.append(headerRow);
       table.append(thead);
@@ -158,12 +474,11 @@
           waveCell.append(waveform);
 
           const playPauseButton = `
-            <button class="btn btn-secondary audio-btn" data-action="play" id="play-pause2-${i}-${j}">
+            <button class="btn btn-secondary mt-2" id="play-pause2-${i}-${j}">
               <i class="bi bi-play-fill"></i> Play / <i class="bi bi-pause-fill"></i> Pause
             </button>
           `;
           waveCell.append(playPauseButton);
-
           row.append(waveCell);
         });
 
@@ -191,7 +506,6 @@
       });
     }
 
-    // 2) 스크린샷 하단 같은 multistream visualization
     function buildMultistreamTable() {
       const columns = ['Hibiki', 'Seamless'];
       const rows = [
@@ -201,11 +515,14 @@
       ];
 
       const table = $('#vis-table');
+      table.empty();
 
       const thead = $('<thead>');
       const headerRow = $('<tr>');
       columns.forEach(header => {
-        headerRow.append($('<th style="text-align: center; border-bottom: 2px solid #333;">').text(header));
+        headerRow.append(
+          $('<th style="text-align: center; border-bottom: 2px solid #333;">').text(header)
+        );
       });
       thead.append(headerRow);
       table.append(thead);
@@ -217,16 +534,18 @@
 
         files.forEach((file, j) => {
           const waveCell = $('<td style="text-align: center">');
-          const waveform = $('<div>').attr('id', `waveform-${i}-${j}`).addClass('wave-wrap');
+
+          const waveform = $('<div>')
+            .attr('id', `waveform-${i}-${j}`)
+            .addClass('wave-wrap');
 
           waveCell.append(waveform);
 
           const playPauseButton = `
-            <button class="btn btn-secondary audio-btn" data-action="play" id="play-pause-${i}-${j}">
+            <button class="btn btn-secondary mt-2" id="play-pause-${i}-${j}">
               <i class="bi bi-play-fill"></i> Play / <i class="bi bi-pause-fill"></i> Pause
             </button>
           `;
-
           waveCell.append(playPauseButton);
           row.append(waveCell);
         });
@@ -244,16 +563,16 @@
             splitChannels: [
               {
                 waveColor: '#2E7D9E',
-                progressColor: '#173E4E',
+                progressColor: '#173E4E'
               },
               {
                 waveColor: '#E57872',
-                progressColor: '#2A0908',
+                progressColor: '#2A0908'
               }
             ],
             barWidth: 2,
             height: 55,
-            width: 700,
+            width: 700
           });
 
           allWaveSurfers.push(wavesurfer);
@@ -266,7 +585,7 @@
       });
     }
 
-    $(document).ready(function() {
+    $(document).ready(function () {
       buildGroundTruthTable();
       buildMultistreamTable();
     });
