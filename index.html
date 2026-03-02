@@ -350,7 +350,37 @@
 </section>
 <!-- End paper abstract -->
 
+<!-- Audio visualizer -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Audio Samples</h2>
 
+        <!-- Sample 1 -->
+        <div class="box">
+          <p class="is-size-6"><b>Sample 1</b> — 설명 한 줄</p>
+          <div id="waveform-1"></div>
+          <div class="buttons mt-3">
+            <button id="btn-1" class="button is-dark is-small">Play / Pause</button>
+          </div>
+        </div>
+
+        <!-- Sample 2 -->
+        <div class="box">
+          <p class="is-size-6"><b>Sample 2</b> — 설명 한 줄</p>
+          <div id="waveform-2"></div>
+          <div class="buttons mt-3">
+            <button id="btn-2" class="button is-dark is-small">Play / Pause</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End audio visualizer -->
+    
 <!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
@@ -515,6 +545,28 @@
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const ws1 = WaveSurfer.create({
+      container: "#waveform-1",
+      url: "static/audio/sample1.wav",
+      height: 80,
+      barWidth: 2,
+      normalize: true,
+    });
 
+    document.querySelector("#btn-1").addEventListener("click", () => ws1.playPause());
+
+    const ws2 = WaveSurfer.create({
+      container: "#waveform-2",
+      url: "static/audio/sample2.wav",
+      height: 80,
+      barWidth: 2,
+      normalize: true,
+    });
+
+    document.querySelector("#btn-2").addEventListener("click", () => ws2.playPause());
+  });
+</script>
   </body>
   </html>
