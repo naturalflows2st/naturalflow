@@ -3,312 +3,223 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta name="title" content="NaturalFlow">
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, audio, AI">
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="title" content="NaturalFlow Audio Demo">
+  <meta name="description" content="Anonymous audio demos for NaturalFlow simultaneous speech-to-speech translation.">
   <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <meta property="og:title" content="PAPER_TITLE">
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
-
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
+  <title>NaturalFlow | Anonymous Audio Demo</title>
 
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
-  <script defer src="static/js/index.js"></script>
-
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-  />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://unpkg.com/wavesurfer.js@7"></script>
+  >
 
-  <!-- <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      }
-    ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "audio"],
-    "abstract": "",
-    "citation": "BIBTEX_CITATION_HERE",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    }
-  }
-  </script> -->
+  <script defer src="https://unpkg.com/wavesurfer.js@7"></script>
 
   <style>
-    /* Hibiki-style audio cards */
-    .hibiki-audio-section {
-      padding-top: 1.5rem;
-      padding-bottom: 2rem;
+    :root {
+      --bg-main: #f5f7fb;
+      --card-bg: #ffffff;
+      --text-main: #243447;
+      --text-muted: #5f6b7a;
+      --line: #e3e9f3;
+      --wave: #8ba0b7;
+      --progress: #2c4a68;
+      --button: #2c4a68;
+      --button-hover: #1f3a54;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --shadow: 0 10px 24px rgba(27, 47, 74, 0.1);
     }
 
-    .hibiki-card {
-      background: #fff;
-      border-radius: 0.5rem;
-      box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
-      padding: 2.5rem 3rem;
-      margin-bottom: 2.5rem;
+    body {
+      background: radial-gradient(circle at top right, #edf3ff 0%, var(--bg-main) 40%, #f4f6fb 100%);
+      color: var(--text-main);
+      min-height: 100vh;
     }
 
-    .hibiki-card h2,
-    .hibiki-card h3,
-    .hibiki-card p,
-    .hibiki-card th,
-    .hibiki-card td {
-      color: #595959;
+    .hero.is-light {
+      background: transparent;
     }
 
-    .hibiki-card table {
-      width: 100%;
+    .demo-title {
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
     }
 
-    .hibiki-card td,
-    .hibiki-card th {
-      vertical-align: middle;
-      text-align: center;
+    .demo-subtitle {
+      color: var(--text-muted);
+      max-width: 860px;
+      margin: 0 auto;
+      line-height: 1.7;
     }
 
-    .hibiki-card .table > :not(caption) > * > * {
-      padding-top: 0.9rem;
-      padding-bottom: 0.9rem;
+    .demo-block {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      margin-bottom: 2rem;
     }
 
-    .hibiki-card .wave-wrap {
-      min-height: 76px;
+    .demo-block .title {
+      margin-bottom: 0.8rem;
     }
 
-    .hibiki-card .btn-secondary {
-      padding: 0.1rem 0.8rem;
-      font-size: small;
+    .demo-lead {
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
     }
 
-    @media screen and (max-width: 768px) {
-      .hibiki-card {
+    .subsection-header {
+      margin-top: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .dataset-note {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-size: 0.98rem;
+    }
+
+    .short-form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .long-form-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .sample-card {
+      background: #fbfcfe;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+    }
+
+    .sample-label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      color: #4a5d75;
+      margin-bottom: 0.7rem;
+      text-transform: uppercase;
+    }
+
+    .track-row + .track-row {
+      margin-top: 0.85rem;
+      border-top: 1px dashed #d9e2ef;
+      padding-top: 0.85rem;
+    }
+
+    .track-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.45rem;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .track-name {
+      font-weight: 600;
+      color: #34495f;
+      font-size: 0.95rem;
+    }
+
+    .wave-container {
+      min-height: 70px;
+      border-radius: 10px;
+      background: #f4f8fd;
+      border: 1px solid #d9e4f2;
+      padding: 0.25rem;
+    }
+
+    .audio-btn {
+      border: none;
+      border-radius: 999px;
+      background: var(--button);
+      color: #fff;
+      font-size: 0.85rem;
+      line-height: 1;
+      padding: 0.55rem 0.8rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: background 0.15s ease;
+    }
+
+    .audio-btn:hover {
+      background: var(--button-hover);
+    }
+
+    .audio-btn:disabled {
+      background: #99a9bb;
+      cursor: wait;
+    }
+
+    .multistream-sample + .multistream-sample {
+      margin-top: 1rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+
+    .multistream-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .model-tag {
+      font-weight: 700;
+      color: #34495f;
+      margin-bottom: 0.3rem;
+    }
+
+    .channel-note {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer {
+      background: transparent;
+      padding-top: 1rem;
+      color: var(--text-muted);
+    }
+
+    @media screen and (max-width: 1023px) {
+      .demo-block {
         padding: 1.25rem;
-        overflow-x: auto;
+      }
+
+      .short-form-grid,
+      .multistream-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 
 <body>
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-<!-- 
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 1</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div> -->
-
-  <main id="main-content">
-    <section class="hero">
+  <main>
+    <section class="hero is-light">
       <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column has-text-centered">
-              <h1 class="title is-1 publication-title">NaturalFlow: Optimizing Speech Flow in Simultaneous Speech-to-Speech Translation</h1>
-              <!-- <div class="is-size-5 publication-authors">
-                <span class="author-block">
-                  <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,
-                </span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,
-                </span>
-                <span class="author-block">
-                  <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                </span>
-              </div> -->
-
-              <!-- <div class="is-size-5 publication-authors">
-                <span class="author-block">Institution Name<br>Conference name and year</span>
-                <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-              </div> -->
-
-              <!-- <div class="column has-text-centered">
-                <div class="publication-links">
-                  <span class="link-block">
-                    <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Paper</span>
-                    </a>
-                  </span>
-
-                  <span class="link-block">
-                    <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fab fa-github"></i>
-                      </span>
-                      <span>Code</span>
-                    </a>
-                  </span>
-
-                  <span class="link-block">
-                    <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="ai ai-arxiv"></i>
-                      </span>
-                      <span>arXiv</span>
-                    </a>
-                  </span>
-                </div>
-              </div> -->
-            </div>
-          </div>
+        <div class="container is-max-desktop has-text-centered">
+          <h1 class="title is-1 demo-title">NaturalFlow</h1>
+          <h2 class="title is-4">Anonymous Research Audio Demo</h2>
+          <p class="demo-subtitle">
+            NaturalFlow optimizes speech flow in simultaneous speech-to-speech translation by reducing pauses and silence ratios while preserving translation quality and latency.
+          </p>
         </div>
       </div>
     </section>
-
 
     <section class="section hero is-light">
       <div class="container is-max-desktop">
@@ -318,248 +229,275 @@
             <div class="content has-text-justified">
               <p>
                 Simultaneous speech-to-speech translation (S2ST) aims to facilitate near-instantaneous communication by minimizing latency between speakers and listeners, offering a compelling, real-time alternative to the high-latency nature of consecutive translation. However, the excessive pursuit of low latency inherently tends to result in fragmented chunk-wise translation to listener. Consequently, listeners are subjected to an unnatural acoustic flow punctuated by frequent pauses, which could increase their cognitive load. To bridge this gap, we introduce a fluency-aware optimization framework designed to discover the sweet spot between the low-latency benefits of simultaneous translation and fluent flow of consecutive translation. Our framework minimizes inter-chunk silences by leveraging model-internal signals, including linguistic diversity and the induced temporal variability in speech durations. Experiments across diverse domains on benchmarks demonstrate that our framework successfully shows natural speech flow without compromising latency and translation quality.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="section hibiki-audio-section">
+
+    <section class="section pt-2">
       <div class="container is-max-desktop">
-        <div class="hibiki-card">
+        <div class="demo-block">
           <h2 class="title is-3">Demonstrating Enhanced Fluency: Minimized Pauses and Silence Ratios</h2>
-          <p>
+          <p class="demo-lead">
             These samples demonstrate how <strong>NaturalFlow</strong> significantly reduces the frequency of unnatural pauses and the overall silence ratio compared to baseline models. By optimizing for fluency-aligned preferences, our model delivers a more continuous and natural simultaneous speech-to-speech translation experience.
           </p>
 
-          <table class="table" id="vis-table2"></table>
+          <h3 class="title is-4 subsection-header">Short-form audio examples</h3>
+          <p class="dataset-note">Dataset: CVSS-C</p>
+          <div class="short-form-grid" id="short-form-grid"></div>
+
+          <h3 class="title is-4 subsection-header">Long-form audio examples</h3>
+          <p class="dataset-note">Dataset: mTEDx</p>
+          <div class="long-form-wrap" id="long-form-grid"></div>
         </div>
       </div>
     </section>
 
-    <section class="section hibiki-audio-section">
+    <section class="section pt-1">
       <div class="container is-max-desktop">
-        <div class="hibiki-card">
+        <div class="demo-block">
           <h2 class="title is-3">Multistream Visualization</h2>
-          <p>
-            The audio for the source and translated versions are on different channels.
-            Use headphones to hear both at the same time.
+          <p class="demo-lead">
+            Each player is stereo: <strong>left channel is Source</strong>, and <strong>right channel is model output</strong>. Use headphones for clear channel separation.
           </p>
-
-          <table class="table" id="vis-table"></table>
+          <p class="demo-lead">
+            Dataset: VoxPopuli
+          </p>
+          <div id="multistream-grid"></div>
         </div>
       </div>
     </section>
-
-
-    <!-- <section class="section" id="BibTeX">
-      <div class="container is-max-desktop content">
-        <div class="bibtex-header">
-          <h2 class="title">BibTeX</h2>
-          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-            <i class="fas fa-copy"></i>
-            <span class="copy-text">Copy</span>
-          </button>
-        </div> -->
-        <!-- <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre> -->
-      </div>
-    </section>
-    </main>
+  </main>
 
   <footer class="footer">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
-              This page was built using the
-              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>
-              which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br>
-              This website is licensed under a
-              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
-                Creative Commons Attribution-ShareAlike 4.0 International License
-              </a>.
-            </p>
-          </div>
-        </div>
-      </div>
+    <div class="content has-text-centered">
+      <p>Anonymous demo page for research reproduction on GitHub Pages.</p>
     </div>
   </footer>
 
   <script>
-    const allWaveSurfers = [];
+    const waveJobs = [];
+    const players = [];
+
+    const fluencyShortData = [
+      {
+        sample: "Sample 1",
+        tracks: [
+          { name: "Source", url: "static/audio/fluency_padded/short/sample1/source.wav" },
+          { name: "NaturalFlow", url: "static/audio/fluency_padded/short/sample1/naturalflow.wav" },
+          { name: "Hibiki", url: "static/audio/fluency_padded/short/sample1/hibiki.wav" }
+        ]
+      },
+      {
+        sample: "Sample 2",
+        tracks: [
+          { name: "Source", url: "static/audio/fluency_padded/short/sample2/source.wav" },
+          { name: "NaturalFlow", url: "static/audio/fluency_padded/short/sample2/naturalflow.wav" },
+          { name: "Hibiki", url: "static/audio/fluency_padded/short/sample2/hibiki.wav" }
+        ]
+      }
+    ];
+
+    const fluencyLongData = [
+      {
+        sample: "Sample 1",
+        tracks: [
+          { name: "Source", url: "static/audio/fluency_padded/long/sample1/source.wav" },
+          { name: "NaturalFlow", url: "static/audio/fluency_padded/long/sample1/naturalflow.wav" },
+          { name: "Hibiki", url: "static/audio/fluency_padded/long/sample1/hibiki.wav" }
+        ]
+      }
+    ];
+
+    const multistreamData = [
+      {
+        sample: "Sample 1",
+        naturalflowStereo: "static/audio/multistream/sample1/stereo_naturalflow.wav",
+        hibikiStereo: "static/audio/multistream/sample1/stereo_hibiki.wav"
+      },
+      {
+        sample: "Sample 2",
+        naturalflowStereo: "static/audio/multistream/sample2/stereo_naturalflow.wav",
+        hibikiStereo: "static/audio/multistream/sample2/stereo_hibiki.wav"
+      }
+    ];
 
     function pauseOthers(current) {
-      allWaveSurfers.forEach(ws => {
-        if (ws !== current) ws.pause();
+      players.forEach((p) => {
+        if (p !== current) {
+          p.pause();
+        }
       });
     }
 
-    // Updated Table Builder for NaturalFlow (4 Columns)
-    function buildGroundTruthTable() {
-      const columns = ['NaturalFlow', 'Hibiki-zero', 'Hibiki', 'Seamless'];
-      const dirs = [
-        'static/audio/naturalflow', // 실제 오디오 파일 경로로 맞춰서 수정해주세요
-        'static/audio/hibiki_zero', // 실제 오디오 파일 경로로 맞춰서 수정해주세요
-        'static/audio/hibiki',
-        'static/audio/seamless'
-      ];
+    function setButtonState(button, isPlaying) {
+      if (!button) return;
+      const icon = button.querySelector("i");
+      const text = button.querySelector(".btn-label");
+      if (isPlaying) {
+        icon.className = "bi bi-pause-fill";
+        text.textContent = "Pause";
+      } else {
+        icon.className = "bi bi-play-fill";
+        text.textContent = "Play";
+      }
+    }
 
-      const rows = [
-        'sample1.wav',
-        'sample2.wav',
-        'sample3.wav',
-        'sample4.wav'
-      ];
+    function createTrackRow(sampleKey, trackKey, trackName, audioUrl, splitChannels) {
+      const row = document.createElement("div");
+      row.className = "track-row";
 
-      const table = $('#vis-table2');
-      table.empty();
+      const head = document.createElement("div");
+      head.className = "track-head";
 
-      const thead = $('<thead>');
-      const headerRow = $('<tr>');
-      columns.forEach(header => {
-        headerRow.append(
-          $('<th style="text-align: center; border-bottom: 2px solid #333;">').text(header)
+      const nameEl = document.createElement("div");
+      nameEl.className = "track-name";
+      nameEl.textContent = trackName;
+
+      const button = document.createElement("button");
+      button.className = "audio-btn";
+      button.id = `btn-${sampleKey}-${trackKey}`;
+      button.type = "button";
+      button.disabled = true;
+      button.innerHTML = "<i class='bi bi-hourglass-split'></i><span class='btn-label'>Loading</span>";
+
+      head.appendChild(nameEl);
+      head.appendChild(button);
+
+      const wave = document.createElement("div");
+      wave.className = "wave-container";
+      wave.id = `wave-${sampleKey}-${trackKey}`;
+
+      row.appendChild(head);
+      row.appendChild(wave);
+
+      waveJobs.push({
+        waveId: wave.id,
+        buttonId: button.id,
+        url: audioUrl,
+        splitChannels: splitChannels
+      });
+
+      return row;
+    }
+
+    function createSampleCard(sampleKey, sampleName, tracks, splitChannels) {
+      const card = document.createElement("article");
+      card.className = "sample-card";
+
+      const label = document.createElement("div");
+      label.className = "sample-label";
+      label.textContent = sampleName;
+      card.appendChild(label);
+
+      tracks.forEach((track, idx) => {
+        card.appendChild(
+          createTrackRow(sampleKey, idx, track.name, track.url, splitChannels)
         );
       });
-      thead.append(headerRow);
-      table.append(thead);
 
-      const tbody = $('<tbody>');
-
-      rows.forEach((file, i) => {
-        const row = $('<tr>');
-
-        dirs.forEach((dir, j) => {
-          const waveCell = $('<td style="text-align: center">');
-
-          const waveform = $('<div>')
-            .attr('id', `waveform2-${i}-${j}`)
-            .addClass('wave-wrap');
-
-          waveCell.append(waveform);
-
-          const playPauseButton = `
-            <button class="btn btn-secondary mt-2" id="play-pause2-${i}-${j}">
-              <i class="bi bi-play-fill"></i> Play / <i class="bi bi-pause-fill"></i> Pause
-            </button>
-          `;
-          waveCell.append(playPauseButton);
-          row.append(waveCell);
-        });
-
-        tbody.append(row);
-      });
-
-      table.append(tbody);
-
-      rows.forEach((file, i) => {
-        dirs.forEach((dir, j) => {
-          const wavesurfer = WaveSurfer.create({
-            container: `#waveform2-${i}-${j}`,
-            url: `${dir}/${file}`,
-            barWidth: 2,
-            height: 55
-          });
-
-          allWaveSurfers.push(wavesurfer);
-
-          $(`#play-pause2-${i}-${j}`).click(() => {
-            pauseOthers(wavesurfer);
-            wavesurfer.playPause();
-          });
-        });
-      });
+      return card;
     }
 
-    function buildMultistreamTable() {
-      const columns = ['Hibiki', 'Seamless'];
-      const rows = [
-        ['static/audio-stereo/hibiki1.wav', 'static/audio-stereo/seamless1.wav'],
-        ['static/audio-stereo/hibiki2.wav', 'static/audio-stereo/seamless2.wav'],
-        ['static/audio-stereo/hibiki3.wav', 'static/audio-stereo/seamless3.wav']
-      ];
+    function renderFluency() {
+      const shortRoot = document.getElementById("short-form-grid");
+      const longRoot = document.getElementById("long-form-grid");
 
-      const table = $('#vis-table');
-      table.empty();
-
-      const thead = $('<thead>');
-      const headerRow = $('<tr>');
-      columns.forEach(header => {
-        headerRow.append(
-          $('<th style="text-align: center; border-bottom: 2px solid #333;">').text(header)
+      fluencyShortData.forEach((item, idx) => {
+        shortRoot.appendChild(
+          createSampleCard(`short-${idx + 1}`, item.sample, item.tracks, false)
         );
       });
-      thead.append(headerRow);
-      table.append(thead);
 
-      const tbody = $('<tbody>');
+      fluencyLongData.forEach((item, idx) => {
+        longRoot.appendChild(
+          createSampleCard(`long-${idx + 1}`, item.sample, item.tracks, false)
+        );
+      });
+    }
 
-      rows.forEach((files, i) => {
-        const row = $('<tr>');
+    function renderMultistream() {
+      const root = document.getElementById("multistream-grid");
 
-        files.forEach((file, j) => {
-          const waveCell = $('<td style="text-align: center">');
+      multistreamData.forEach((item, idx) => {
+        const block = document.createElement("div");
+        block.className = "multistream-sample";
 
-          const waveform = $('<div>')
-            .attr('id', `waveform-${i}-${j}`)
-            .addClass('wave-wrap');
+        const label = document.createElement("div");
+        label.className = "sample-label";
+        label.textContent = item.sample;
+        block.appendChild(label);
 
-          waveCell.append(waveform);
+        const grid = document.createElement("div");
+        grid.className = "multistream-grid";
 
-          const playPauseButton = `
-            <button class="btn btn-secondary mt-2" id="play-pause-${i}-${j}">
-              <i class="bi bi-play-fill"></i> Play / <i class="bi bi-pause-fill"></i> Pause
-            </button>
-          `;
-          waveCell.append(playPauseButton);
-          row.append(waveCell);
+        const naturalflowCard = document.createElement("article");
+        naturalflowCard.className = "sample-card";
+        naturalflowCard.innerHTML = "<div class='model-tag'>NaturalFlow</div><div class='channel-note'>Left: Source / Right: NaturalFlow</div>";
+        naturalflowCard.appendChild(
+          createTrackRow(`multistream-${idx + 1}`, "naturalflow", "Stereo Playback", item.naturalflowStereo, true)
+        );
+
+        const hibikiCard = document.createElement("article");
+        hibikiCard.className = "sample-card";
+        hibikiCard.innerHTML = "<div class='model-tag'>Hibiki</div><div class='channel-note'>Left: Source / Right: Hibiki</div>";
+        hibikiCard.appendChild(
+          createTrackRow(`multistream-${idx + 1}`, "hibiki", "Stereo Playback", item.hibikiStereo, true)
+        );
+
+        grid.appendChild(naturalflowCard);
+        grid.appendChild(hibikiCard);
+        block.appendChild(grid);
+        root.appendChild(block);
+      });
+    }
+
+    function initWaveforms() {
+      waveJobs.forEach((job) => {
+        const button = document.getElementById(job.buttonId);
+        const ws = WaveSurfer.create({
+          container: `#${job.waveId}`,
+          url: job.url,
+          waveColor: "#8ba0b7",
+          progressColor: "#2c4a68",
+          cursorColor: "#1e344a",
+          barWidth: 2,
+          barGap: 1,
+          barRadius: 2,
+          height: job.splitChannels ? 84 : 70,
+          normalize: true,
+          splitChannels: job.splitChannels
+            ? [
+                { waveColor: "#4f8ab0", progressColor: "#24506f" },
+                { waveColor: "#d58d69", progressColor: "#8a4422" }
+              ]
+            : undefined
         });
 
-        tbody.append(row);
-      });
+        players.push(ws);
 
-      table.append(tbody);
+        ws.on("ready", () => {
+          button.disabled = false;
+          button.innerHTML = "<i class='bi bi-play-fill'></i><span class='btn-label'>Play</span>";
+        });
 
-      rows.forEach((files, i) => {
-        files.forEach((file, j) => {
-          const wavesurfer = WaveSurfer.create({
-            container: `#waveform-${i}-${j}`,
-            url: file,
-            splitChannels: [
-              {
-                waveColor: '#2E7D9E',
-                progressColor: '#173E4E'
-              },
-              {
-                waveColor: '#E57872',
-                progressColor: '#2A0908'
-              }
-            ],
-            barWidth: 2,
-            height: 55,
-            width: 700
-          });
+        ws.on("play", () => setButtonState(button, true));
+        ws.on("pause", () => setButtonState(button, false));
+        ws.on("finish", () => setButtonState(button, false));
 
-          allWaveSurfers.push(wavesurfer);
-
-          $(`#play-pause-${i}-${j}`).click(() => {
-            pauseOthers(wavesurfer);
-            wavesurfer.playPause();
-          });
+        button.addEventListener("click", () => {
+          pauseOthers(ws);
+          ws.playPause();
         });
       });
     }
 
-    $(document).ready(function () {
-      buildGroundTruthTable();
-      buildMultistreamTable();
+    document.addEventListener("DOMContentLoaded", () => {
+      renderFluency();
+      renderMultistream();
+      initWaveforms();
     });
   </script>
 </body>
