@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="title" content="NaturalFlow Audio Demo">
+  <meta name="description" content="Audio demos for NaturalFlow simultaneous speech-to-speech translation.">
+  <meta name="robots" content="index, follow">
+  <title>NaturalFlow | Audio Demo</title>
+
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon-32.png?v=2">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
+  <script defer src="https://unpkg.com/wavesurfer.js@7"></script>
+
+  <style>
+    :root {
+      --bg-main: #f5f7fb;
+      --card-bg: #ffffff;
+      --text-main: #243447;
+      --text-muted: #5f6b7a;
+      --line: #e3e9f3;
+      --wave: #8ba0b7;
+      --progress: #2c4a68;
+      --button: #2c4a68;
+      --button-hover: #1f3a54;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --shadow: 0 10px 24px rgba(27, 47, 74, 0.1);
+    }
+
+    body {
+      background: radial-gradient(circle at top right, #edf3ff 0%, var(--bg-main) 40%, #f4f6fb 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    .hero.is-light {
+      background: transparent;
+    }
+
+    .demo-title {
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .demo-subtitle {
+      color: var(--text-muted);
+      max-width: 860px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .author-names {
+      font-size: 1.2rem;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+    }
+
+    .author-affil {
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .author-notes {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 1rem;
+    }
+
+    .story {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: left;
+      line-height: 1.8;
+      font-size: 1.08rem;
+      color: var(--text-main);
+    }
+
+    .story p {
+      margin-bottom: 1.15rem;
+    }
+
+    .story-lead {
+      font-size: 1.3rem;
+      font-weight: 600;
+      line-height: 1.6;
+      color: #1f3a54;
+      margin-bottom: 1.4rem;
+    }
+
+    .story em {
+      color: #2c4a68;
+      font-style: italic;
+    }
+
+    .story .pause-line {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .key-idea {
+      background: linear-gradient(135deg, #eef4ff 0%, #f6f9ff 100%);
+      border-left: 4px solid var(--button);
+      border-radius: 12px;
+      padding: 1.2rem 1.4rem;
+      margin: 1.6rem 0;
+    }
+
+    .key-idea .key-label {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--button);
+      margin-bottom: 0.4rem;
+    }
+
+    .key-idea p {
+      margin-bottom: 0;
+      font-size: 1.05rem;
+    }
+
+    .big-question {
+      text-align: center;
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #1f3a54;
+      margin: 2.2rem auto;
+      padding: 0.2rem 0;
+      max-width: 640px;
+      position: relative;
+    }
+
+    .big-question::before,
+    .big-question::after {
+      content: "";
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--button);
+      border-radius: 3px;
+      margin: 0 auto;
+      opacity: 0.5;
+    }
+
+    .big-question::before { margin-bottom: 1rem; }
+    .big-question::after  { margin-top: 1rem; }
+
+    .gap-highlight {
+      color: var(--button-hover);
+      font-weight: 700;
+    }
+
+    .story-close {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-top: 2rem;
+    }
+
+    .story-figure {
+      margin: 2rem auto 1.6rem;
+      text-align: center;
+    }
+
+    .story-figure img {
+      width: 100%;
+      max-width: 820px;
+      height: auto;
+    }
+
+    .story-figure figcaption {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-top: 0.8rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media screen and (max-width: 1023px) {
+      .big-question { font-size: 1.35rem; }
+      .story-lead { font-size: 1.15rem; }
+    }
+
+    .demo-block {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .demo-block .title {
+      margin-bottom: 0.8rem;
+    }
+
+    .demo-lead {
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .subsection-header {
+      margin-top: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .dataset-note {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-size: 0.98rem;
+    }
+
+    .short-form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .long-form-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .sample-card {
+      background: #fbfcfe;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+    }
+
+    .sample-label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      color: #4a5d75;
+      margin-bottom: 0.7rem;
+      text-transform: uppercase;
+    }
+
+    .track-row + .track-row {
+      margin-top: 0.85rem;
+      border-top: 1px dashed #d9e2ef;
+      padding-top: 0.85rem;
+    }
+
+    .track-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.45rem;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .track-name {
+      font-weight: 600;
+      color: #34495f;
+      font-size: 0.95rem;
+    }
+
+    .wave-container {
+      min-height: 70px;
+      border-radius: 10px;
+      background: #f4f8fd;
+      border: 1px solid #d9e4f2;
+      padding: 0.25rem;
+    }
+
+    .audio-btn {
+      border: none;
+      border-radius: 999px;
+      background: var(--button);
+      color: #fff;
+      font-size: 0.85rem;
+      line-height: 1;
+      padding: 0.55rem 0.8rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: background 0.15s ease;
+    }
+
+    .audio-btn:hover {
+      background: var(--button-hover);
+    }
+
+    .audio-btn:disabled {
+      background: #99a9bb;
+      cursor: wait;
+    }
+
+    .multistream-sample + .multistream-sample {
+      margin-top: 1rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+
+    .multistream-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .model-tag {
+      font-weight: 700;
+      color: #34495f;
+      margin-bottom: 0.3rem;
+    }
+
+    .channel-note {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer {
+      background: transparent;
+      padding-top: 1rem;
+      color: var(--text-muted);
+    }
+
+    @media screen and (max-width: 1023px) {
+      .demo-block {
+        padding: 1.25rem;
+      }
+
+      .short-form-grid,
+      .multistream-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="hero is-light">
+      <div class="hero-body">
+        <div class="container is-max-desktop has-text-centered">
+          <h1 class="title is-1 demo-title">NaturalFlow: Optimizing Speech Flow in Simultaneous Speech-to-Speech Translation</h1>
+          <p class="author-names">
+            Dongwook Lee<sup>1&thinsp;*</sup>&nbsp;&nbsp;&nbsp;Youngho Cho<sup>1&thinsp;*</sup>&nbsp;&nbsp;&nbsp;Sangkwon Park<sup>1</sup>&nbsp;&nbsp;&nbsp;Heeseung Kim<sup>2&thinsp;&dagger;</sup>&nbsp;&nbsp;&nbsp;Sungroh Yoon<sup>1&thinsp;&dagger;</sup>
+          </p>
+          <p class="author-affil">
+            Seoul National University<sup>1</sup>&nbsp;&nbsp;&nbsp;University of Seoul<sup>2</sup>
+          </p>
+          <p class="author-notes">
+            <sup>*</sup>Equal contribution&nbsp;&nbsp;&nbsp;<sup>&dagger;</sup>Corresponding authors
+          </p>
+          <p class="demo-subtitle">
+            NaturalFlow optimizes speech flow in simultaneous speech-to-speech translation by reducing pauses and silence ratios while preserving translation quality and latency.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="story">
+          <p class="story-lead">
+            Real-time speech translation has become fast enough to feel <em>nearly instantaneous.</em>
+          </p>
+
+          <p>
+            Yet the way it achieves this speed introduces a different problem: the translated speech often arrives in <span class="gap-highlight">fragments.</span> A system speaks once it has enough source context to generate a partial translation, then waits until the next meaningful unit becomes available.
+          </p>
+
+          <p>
+            These <em>wait-and-speak</em> cycles introduce repeated silences between translated chunks, making the output sound less like continuous speech and more like a sequence of disconnected bursts &mdash; ultimately degrading listeners&rsquo; judgments of translation quality.
+          </p>
+
+          <div class="big-question">
+            But should real-time translation have to sound&nbsp;fragmented?
+          </div>
+
+          <p>
+            This is the question behind <strong>NaturalFlow</strong>. Instead of treating silence as unavoidable, we ask whether the model can use <em>the diversity of expression</em> to smooth the flow.
+          </p>
+
+          <div class="key-idea">
+            <div class="key-label">The idea</div>
+            <p>
+              An LLM-based translator can express the same meaning in many faithful ways. Some are short and direct; others take slightly longer to say. NaturalFlow learns to choose translations that are not just accurate, but <strong>timed for speech</strong> &mdash; using natural paraphrases to keep talking while the source audio continues to arrive.
+            </p>
+          </div>
+
+          <figure class="story-figure">
+            <img src="static/images/translation_comparison.png" alt="Comparison of a baseline simultaneous translation, broken up by pauses, against NaturalFlow's continuous output that paraphrases to keep speaking.">
+            <figcaption>
+              A baseline system stalls between chunks, leaving the listener waiting through repeated silences. NaturalFlow chooses a slightly longer paraphrase &mdash; <em>"awarded during the championship phase"</em> &mdash; that keeps the speech flowing continuously while the source audio is still arriving.
+            </figcaption>
+          </figure>
+
+          <p class="story-close">
+            <strong>Hear the difference for yourself.</strong> 🎧
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pt-2">
+      <div class="container is-max-desktop">
+        <div class="demo-block">
+          <h2 class="title is-3">Demonstrating Enhanced Fluency: Minimized Pauses and Silence Ratios</h2>
+          <p class="demo-lead">
+            These samples demonstrate how <strong>NaturalFlow</strong> significantly reduces the frequency of unnatural pauses and the overall silence ratio compared to baseline models. By optimizing for fluency-aligned preferences, our model delivers a more continuous and natural simultaneous speech-to-speech translation experience.
+          </p>
+
+          <h3 class="title is-4 subsection-header">Short-form audio examples</h3>
+          <p class="dataset-note">Dataset: CVSS-C</p>
+          <div class="short-form-grid" id="short-form-grid"></div>
+
+          <h3 class="title is-4 subsection-header">Long-form audio examples</h3>
+          <p class="dataset-note">Dataset: mTEDx</p>
+          <div class="long-form-wrap" id="long-form-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pt-1">
+      <div class="container is-max-desktop">
+        <div class="demo-block">
+          <h2 class="title is-3">Multistream Visualization</h2>
+          <p class="demo-lead">
+            Each player is stereo: <strong>left channel is Source</strong>, and <strong>right channel is model output</strong>. Use headphones for clear channel separation.
+          </p>
+          <p class="demo-lead">
+            Dataset: VoxPopuli
+          </p>
+          <div id="multistream-grid"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <script>
+    const waveJobs = [];
+    const players = [];
+
+    const fluencyShortData = [
+      {
+        sample: "Sample 1",
+        tracks: [
+          { name: "Source", url: "static/audio/fluency_padded/short/sample1/source.wav" },
+          { name: "NaturalFlow", url: "static/audio/fluency_padded/short/sample1/naturalflow.wav" },
+          { name: "Hibiki", url: "static/audio/fluency_padded/short/sample1/hibiki.wav" }
+        ]
+      },
+      {
+        sample: "Sample 2",
+        tracks: [
+          { name: "Source", url: "static/audio/fluency_padded/short/sample2/source.wav" },
+          { name: "NaturalFlow", url: "static/audio/fluency_padded/short/sample2/naturalflow.wav" },
+          { name: "Hibiki", url: "static/audio/fluency_padded/short/sample2/hibiki.wav" }
+        ]
+      }
+    ];
+
+    const fluencyLongData = [
+      {
+        sample: "Sample 1",
+        tracks: [
+          { name: "Source", url: "static/audio/fluency_padded/long/sample1/source.wav" },
+          { name: "NaturalFlow", url: "static/audio/fluency_padded/long/sample1/naturalflow.wav" },
+          { name: "Hibiki", url: "static/audio/fluency_padded/long/sample1/hibiki.wav" }
+        ]
+      }
+    ];
+
+    const multistreamData = [
+      {
+        sample: "Sample 1",
+        naturalflowStereo: "static/audio/multistream/sample1/stereo_naturalflow.wav",
+        hibikiStereo: "static/audio/multistream/sample1/stereo_hibiki.wav"
+      },
+      {
+        sample: "Sample 2",
+        naturalflowStereo: "static/audio/multistream/sample2/stereo_naturalflow.wav",
+        hibikiStereo: "static/audio/multistream/sample2/stereo_hibiki.wav"
+      }
+    ];
+
+    function pauseOthers(current) {
+      players.forEach((p) => {
+        if (p !== current) {
+          p.pause();
+        }
+      });
+    }
+
+    function setButtonState(button, isPlaying) {
+      if (!button) return;
+      const icon = button.querySelector("i");
+      const text = button.querySelector(".btn-label");
+      if (isPlaying) {
+        icon.className = "bi bi-pause-fill";
+        text.textContent = "Pause";
+      } else {
+        icon.className = "bi bi-play-fill";
+        text.textContent = "Play";
+      }
+    }
+
+    function createTrackRow(sampleKey, trackKey, trackName, audioUrl, splitChannels) {
+      const row = document.createElement("div");
+      row.className = "track-row";
+
+      const head = document.createElement("div");
+      head.className = "track-head";
+
+      const nameEl = document.createElement("div");
+      nameEl.className = "track-name";
+      nameEl.textContent = trackName;
+
+      const button = document.createElement("button");
+      button.className = "audio-btn";
+      button.id = `btn-${sampleKey}-${trackKey}`;
+      button.type = "button";
+      button.disabled = true;
+      button.innerHTML = "<i class='bi bi-hourglass-split'></i><span class='btn-label'>Loading</span>";
+
+      head.appendChild(nameEl);
+      head.appendChild(button);
+
+      const wave = document.createElement("div");
+      wave.className = "wave-container";
+      wave.id = `wave-${sampleKey}-${trackKey}`;
+
+      row.appendChild(head);
+      row.appendChild(wave);
+
+      waveJobs.push({
+        waveId: wave.id,
+        buttonId: button.id,
+        url: audioUrl,
+        splitChannels: splitChannels
+      });
+
+      return row;
+    }
+
+    function createSampleCard(sampleKey, sampleName, tracks, splitChannels) {
+      const card = document.createElement("article");
+      card.className = "sample-card";
+
+      const label = document.createElement("div");
+      label.className = "sample-label";
+      label.textContent = sampleName;
+      card.appendChild(label);
+
+      tracks.forEach((track, idx) => {
+        card.appendChild(
+          createTrackRow(sampleKey, idx, track.name, track.url, splitChannels)
+        );
+      });
+
+      return card;
+    }
+
+    function renderFluency() {
+      const shortRoot = document.getElementById("short-form-grid");
+      const longRoot = document.getElementById("long-form-grid");
+
+      fluencyShortData.forEach((item, idx) => {
+        shortRoot.appendChild(
+          createSampleCard(`short-${idx + 1}`, item.sample, item.tracks, false)
+        );
+      });
+
+      fluencyLongData.forEach((item, idx) => {
+        longRoot.appendChild(
+          createSampleCard(`long-${idx + 1}`, item.sample, item.tracks, false)
+        );
+      });
+    }
+
+    function renderMultistream() {
+      const root = document.getElementById("multistream-grid");
+
+      multistreamData.forEach((item, idx) => {
+        const block = document.createElement("div");
+        block.className = "multistream-sample";
+
+        const label = document.createElement("div");
+        label.className = "sample-label";
+        label.textContent = item.sample;
+        block.appendChild(label);
+
+        const grid = document.createElement("div");
+        grid.className = "multistream-grid";
+
+        const naturalflowCard = document.createElement("article");
+        naturalflowCard.className = "sample-card";
+        naturalflowCard.innerHTML = "<div class='model-tag'>NaturalFlow</div><div class='channel-note'>Left: Source / Right: NaturalFlow</div>";
+        naturalflowCard.appendChild(
+          createTrackRow(`multistream-${idx + 1}`, "naturalflow", "Stereo Playback", item.naturalflowStereo, true)
+        );
+
+        const hibikiCard = document.createElement("article");
+        hibikiCard.className = "sample-card";
+        hibikiCard.innerHTML = "<div class='model-tag'>Hibiki</div><div class='channel-note'>Left: Source / Right: Hibiki</div>";
+        hibikiCard.appendChild(
+          createTrackRow(`multistream-${idx + 1}`, "hibiki", "Stereo Playback", item.hibikiStereo, true)
+        );
+
+        grid.appendChild(naturalflowCard);
+        grid.appendChild(hibikiCard);
+        block.appendChild(grid);
+        root.appendChild(block);
+      });
+    }
+
+    function initWaveforms() {
+      waveJobs.forEach((job) => {
+        const button = document.getElementById(job.buttonId);
+        const ws = WaveSurfer.create({
+          container: `#${job.waveId}`,
+          url: job.url,
+          waveColor: "#8ba0b7",
+          progressColor: "#2c4a68",
+          cursorColor: "#1e344a",
+          barWidth: 2,
+          barGap: 1,
+          barRadius: 2,
+          height: job.splitChannels ? 84 : 70,
+          normalize: true,
+          splitChannels: job.splitChannels
+            ? [
+                { waveColor: "#4f8ab0", progressColor: "#24506f" },
+                { waveColor: "#d58d69", progressColor: "#8a4422" }
+              ]
+            : undefined
+        });
+
+        players.push(ws);
+
+        ws.on("ready", () => {
+          button.disabled = false;
+          button.innerHTML = "<i class='bi bi-play-fill'></i><span class='btn-label'>Play</span>";
+        });
+
+        ws.on("play", () => setButtonState(button, true));
+        ws.on("pause", () => setButtonState(button, false));
+        ws.on("finish", () => setButtonState(button, false));
+
+        button.addEventListener("click", () => {
+          pauseOthers(ws);
+          ws.playPause();
+        });
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderFluency();
+      renderMultistream();
+      initWaveforms();
+    });
+  </script>
+</body>
+</html>
